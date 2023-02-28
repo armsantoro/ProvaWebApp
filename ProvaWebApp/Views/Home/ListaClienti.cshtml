@@ -1,0 +1,31 @@
+﻿@page
+@model ProvaWebApp.Views.Home.ListaClientiModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Eta</th>
+            <th>PIVA</th>
+            <th>Colore capelli</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model.clienti)
+        {
+            <tr>
+             
+                <td>@cliente.Name</td>
+                <td>@cliente.Cognome</td>
+                <td>@cliente.Eta</td>
+                <td>@cliente.Piva</td>
+                <td>@cliente.ColoreCapelli</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
