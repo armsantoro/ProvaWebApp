@@ -24,7 +24,7 @@ namespace ProvaWebApp.Controllers
         }
         public IActionResult ListaClienti()
         {
-            return View();
+            return View("ListaClienti", ListaClienti);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
