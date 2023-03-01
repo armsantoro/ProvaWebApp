@@ -1,15 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProvaWebApp.Models;
+﻿using ProvaWebApp.Models;
 using System.Data.SqlClient;
+using System.IO;
 
-namespace ProvaWebApp.Views.Home
+namespace ProvaWebApp.Service
 {
-    public class ListaClientiModel : PageModel
+    public class ServiceClienti
     {
-        public List<Cliente> clienti = new List<Cliente>();
-        public async void OnGet()
+        public List<Cliente> GetClienti()
         {
+            List<Cliente> clienti = new List<Cliente>();
+
             try
             {
                 string query = string.Empty;
@@ -44,14 +44,15 @@ namespace ProvaWebApp.Views.Home
                     connection.Close();
 
                 }
-
+                return clienti;
             }
             catch (Exception)
             {
 
                 throw;
             }
+            
         }
-    
+
     }
 }

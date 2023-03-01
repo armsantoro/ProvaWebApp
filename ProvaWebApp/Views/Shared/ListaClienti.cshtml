@@ -1,5 +1,6 @@
 ﻿@page
-@model ProvaWebApp.Views.Home.ListaClientiModel
+@using ProvaWebApp.Models;
+@model List<Cliente>
 @{
 }
 <table class="table">
@@ -15,10 +16,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var cliente in Model.clienti)
+    @foreach (var cliente in Model)
         {
             <tr>
-             
+     
                 <td>@cliente.Name</td>
                 <td>@cliente.Cognome</td>
                 <td>@cliente.Eta</td>
@@ -26,6 +27,7 @@
                 <td>@cliente.ColoreCapelli</td>
                 
             </tr>
-        }
+            }
+        
     </tbody>
 </table>
